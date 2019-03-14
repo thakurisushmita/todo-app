@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+                                                                                                                                                                                                                                                                                       
+namespace App\Http\Controllers;                                                                                                                                                                                                                                                                               
 use Illuminate\Http\Request;
 use App\todo;
 
@@ -14,6 +14,7 @@ class TodoController extends Controller
      */
     public function index()
     {
+
         $showTodo = todo::all();
         return view('todo.home',compact('showTodo'));
     }
@@ -52,7 +53,8 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-        // php artisan make:migration create_users_table --create=users
+       $todoList = todo::findOrFail($id);
+        return view('todo.show')->withTodo($todoList);
     }
 
     /**
@@ -63,7 +65,12 @@ class TodoController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "abc";
+        exit;
+        // $todoList = todo::find($id);
+        // return $todoList;
+        // exit;
+        // return view('todo.edit')->withTodo($todoList);
     }
 
     /**
