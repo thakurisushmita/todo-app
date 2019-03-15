@@ -53,8 +53,10 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-       $todoList = todo::findOrFail($id);
-        return view('todo.show')->withTodo($todoList);
+        return "xyz";
+        exit;
+       // $todoList = todo::findOrFail($id);
+       //  return view('todo.show')->withTodo($todoList);
     }
 
     /**
@@ -93,6 +95,7 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return "aaaa";
+        exit;
     }
 }
